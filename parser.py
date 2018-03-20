@@ -96,8 +96,6 @@ def helloMIDI ():
             csvFile.writerow(row)
             print (msg)
 
-
-
     print ("Goodbye, closing now!")
     myFile.close()
     # t.join()
