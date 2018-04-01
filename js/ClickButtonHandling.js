@@ -2,7 +2,7 @@
 
 // Starts the live guitar session
 function record(){
-    start();                            // starts the metronome
+    start();                            // starts metronome
     recordSession();
 }
 
@@ -13,7 +13,7 @@ function save(){
 
 }
 
-// Downloading the session data as .csv
+// Download the session data as .csv
 function download(){ downloadSession() };
 // Starts the visualization (line graph)
 function vis(){
@@ -23,12 +23,6 @@ function vis(){
         var visButton = d3.select("#visBut")
             .attr("style", "background-color: #123045;");
 
-        /*
-        visLineGraph();
-        heatmapVis();
-        streamGraphVis();
-        barChartVis();
-        */
         scatterplot();
         heatmapVis();
         visRequested = true;

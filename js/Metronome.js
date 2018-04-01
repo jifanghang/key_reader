@@ -1,14 +1,7 @@
 /**
- * Created by MCL on 02.08.16.
+ * Modified from: http://mohayonao.github.io/web-audio-scheduler/
  */
-
-
-/**
- * I modified the following code-example: http://mohayonao.github.io/web-audio-scheduler/
- *
- */
-
-
+ 
 var audioContext = new AudioContext();
 var scheduler = new WebAudioScheduler({
     context: audioContext
