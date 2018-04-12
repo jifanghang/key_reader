@@ -5,7 +5,7 @@ import csv
 import signal
 import threading
 import sys
-import metronome
+# import metronome
 
 # def myopening (myfilename):
 #     with open(myfilename, 'r') as f:
@@ -56,6 +56,7 @@ def helloMIDI ():
         sys.exit(666)
 
     myFile = open(sys.argv[1] + ".csv", "w")
+    # midFile = open
     csvFile = csv.writer(myFile)
 
 

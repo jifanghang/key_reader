@@ -202,7 +202,7 @@ function saveSession(){
         sessions = temp.concat(scatterplotData);
         var sessionsArr = sessionsObjectToArray(sessions);
         str2 = arrayToCSVString(csvHeader2, sessionsArr, sep);
-        heatmapData = prepareHeatmapData();
+        // heatmapData = prepareHeatmapData();
 
         console.log("sessions", sessions);
 
@@ -373,3 +373,70 @@ function getIndexOfTime(arr, t){
         }
     }
 }
+
+
+/**
+ * Prepares the sessions dataset
+ * @returns {Array} sessions
+ */
+function prepareScatterplotData(){
+    var result = [];
+    var count = 0;
+    for (var i = 0; i<notesOn.length; i++){
+        for (var j = i; j<notesOff.length; j++){
+            if (notesOff[j]["rawData"]["channel"]==notesOn[i]["rawData"]["channel"]){
+                if (notesOff[j]["rawData"]["note"]["number"]==notesOn[i]["rawData"]["note"]["number"]){
+                    result[count] = new Object(8);
+                    result[count].session_ID = numSessions+1;
+                    result[count].noteNumber = notesOff[j]["rawData"]["note"]["number"];
+                    result[count].note = notesOff[j]["rawData"]["note"]["name"];
+                    result[count].velocity = notesOn[i]["rawData"]["velocity"];
+                    result[count].receivedTime = notesOn[i]["timecode"]-firstBeat;
+                    result[count].duration = notesOff[j]["timecode"]-notesOn[i]["timecode"];
+                    result[count].barValue = ((result[count].receivedTime)/barDuration)+1;
+                    result[count].string = notesOff[j]["rawData"]["channel"];
+                    count++;
+                    break;
+                }
+            }
+        }
+    }
+
+    return result;
+
+}
+
+/**
+ * Returns the maximum barValue a session had
+ * @returns {number} max barValue
+ */
+function maxBarValueInSessions(){
+    var result = 0;
+    for (var i = 0; i < sessions.length; i++){
+        if (result<sessions[i].barValue) result = sessions[i].barValue;
+    }
+    return result;
+}
+
+/**
+ * Converts the array session object to an array for the csv download
+ * @param arr sessions
+ * @returns {Array} sessionsArr
+ */
+function sessionsObjectToArray(arr){
+    var result = new Array(arr.length);
+    for (var i = 0; i < arr.length; i++){
+        result[i] = new Array(8);
+        result[i][0] = arr[i].session_ID;
+        result[i][1] = arr[i].noteNumber;
+        result[i][2] = arr[i].note;
+        result[i][3] = arr[i].string;
+        result[i][4] = arr[i].velocity;
+        result[i][5] = arr[i].receivedTime;
+        result[i][6] = arr[i].duration;
+        result[i][7] = arr[i].barValue;
+    }
+    return result;
+}
+
+

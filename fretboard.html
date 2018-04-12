@@ -19,7 +19,14 @@
 
 <body>
 
-  	<h1>Key Reader</h1>
+  	<!-- <h1>Key Reader</h1> -->
+  	<nav class = "navbar navbar-inverse">
+  		<div class="navbar-header">
+  			<div class="container-fluid">
+	      		<a class="navbar-brand" href="#">Key Reader</a>
+	      	</div>
+    	</div>
+  	</nav>
 	<div class="guitar-neck">
 
 		<div class="fret first"></div>
@@ -72,9 +79,10 @@
 	<div class="controls row">
 		<!--<a class="up" href="#">Tune 1/2 Step Up</a>
 		<a class="down" href="#">Tune 1/2 Step Down</a> -->
-		<div class="col-sm-6">
+		<div class="col-sm-4">
+			<div class="jumbotron">
 		
-			<h3>Choose Note to show:</h3>
+			<h4>Choose Note to show:</h4>
 			<div class="dropdown">
 				<button class="btn dropdownbtn" type="button" data-toggle="dropdown">Note<span class="caret"></span></button>
 				<div class="dropdown-content">
@@ -95,11 +103,13 @@
 					</ul>
 				</div>
 			</div>
+		</div>
 			
 		</div>
 
-		<div class="col-sm-6">
-			<h3>Record & save</h3>
+		<div class="col-sm-4">
+			<div class="jumbotron">
+			<h4>Record & save</h4>
 			<div class="bpm">
 				<input id="bpm" type="number" name="bpm" value="100" size="3"/> Speed</div>
 			<div class="record">
@@ -120,6 +130,13 @@
 			
 			</div>
 			<svg id="status" width="200" height="25"></svg>
+		</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="jumbotron">
+				<h4>Import</h4>
+				<button type="button" class="btn btn-default">Import CSV</button>
+			</div>
 		</div>
 		
 	</div>
