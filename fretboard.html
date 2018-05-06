@@ -2,20 +2,21 @@
 <html lang="en" >
 
 <head>
-  	<meta charset="UTF-8">
-  	<title>Key Reader</title>
+	<meta charset="UTF-8">
+	<title>Key Reader</title>
 
-  	<!-- Import libraries -->
-  	<script type="text/javascript" src="lib/webmidi.min.js"></script>
-    <script type="text/javascript" src="lib/FileSaver.min.js"></script>
-    <script type="text/javascript" src="lib/d3.min.js"></script>
-    <script type="text/javascript" src="lib/d3-legend.min.js"></script>
-    <script type="text/javascript" src="lib/web-audio-scheduler.min.js"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    
+	<!-- Import libraries -->
+	<script type="text/javascript" src="lib/webmidi.min.js"></script>
+	<script type="text/javascript" src="lib/FileSaver.min.js"></script>
+	<script type="text/javascript" src="lib/d3.min.js"></script>
+	<script type="text/javascript" src="lib/d3-legend.min.js"></script>
+	<script type="text/javascript" src="lib/web-audio-scheduler.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -136,17 +137,18 @@
 		<div class="col-sm-4">
 			<div class="jumbotron">
 				<h4>Import</h4>
-				<button type="button" class="btn btn-default">Import CSV</button>
+				<button type="button" class="btn btn-default"><input type="file" id="fileinput" /></button>
 			</div>
 		</div>
 		
 	</div>
 	
 
-    <script src="src/Fretboard.js"></script>
-    <script src="src/MidiInputReader.js"></script>
-    <script src="src/ClickButtonHandling.js"></script>
-    <script src="src/Metronome.js"></script>
+	<script src="src/Fretboard.js"></script>
+	<script src="src/MidiInputReader.js"></script>
+	<script src="src/ClickButtonHandling.js"></script>
+	<script src="src/Metronome.js"></script>
+	<script src="src/Upload.js"></script>
 
 
 
