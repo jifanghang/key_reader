@@ -10,7 +10,7 @@ function record(){
 function save(){
     stop();                             // stops the metronome
     saveSession();
-
+    heatmapVis();
 }
 
 // Download the session data as .csv
@@ -23,7 +23,7 @@ function vis(){
         var visButton = d3.select("#visBut")
             .attr("style", "background-color: #123045;");
 
-        scatterplot();
+        // scatterplot();
         heatmapVis();
         visRequested = true;
 

@@ -45,9 +45,9 @@ def helloMIDI ():
     print (msg)
     #mido.get_input_names()
     #['Fishman TriplePlay TP Control', 'Fishman TriplePlay TP Guitar']
-    inport = mido.open_input(mido.get_input_names()[1])
+    # inport = mido.open_input(mido.get_input_names()[1])
     #['GR-55']
-    #inport = mido.open_input(mido.get_input_names()[0])
+    inport = mido.open_input(mido.get_input_names()[0])
     ourtime = time.time()
 
 
