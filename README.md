@@ -1,6 +1,8 @@
 # Key Reader
 Collect MIDI signal from guitar and visualise on a virtual fretboard
 
+Generate dynamic heatmap
+
 Visualization done on *html/css/javascript*
 
 Signal collection & processing with *python*
