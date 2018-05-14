@@ -122,6 +122,9 @@
 	    			<li id="stop" class="topbarElement" onclick="save()">
 	    				<button type="button" class="btn btn-default">Stop & Save Session</button> 
 	    			</li>
+	    			<li id="stop" class="topbarElement" onclick="vis()">
+	    				<button type="button" class="btn btn-default">Heatmap</button> 
+	    			</li>
 	    			<li class="topbarElement" onclick="download()">
 	    				<button type="button" class="btn btn-default">Download CSV</button> 
 	    			</li>
@@ -142,6 +145,24 @@
 		</div>
 		
 	</div>
+	<div id="timeBasedVis" class="wrap">
+    	<div id="lineGraphElement" class="left"></div>
+    	<div id="streamGraphElement" class="left"></div>
+    	<div id="barChartElement" class="left"></div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class = "container">
+	<!-- <div id="scatterplot" class="wrap"></div> -->
+
+	<div id="heatmapElement" class="wrap"></div>
+	</div>
 	
 
 	<script src="src/Fretboard.js"></script>
@@ -150,6 +171,7 @@
 	<script src="src/Metronome.js"></script>
 	<script src="src/Upload.js"></script>
 	<script src="src/Heatmap.js"></script>
+	<script type="text/javascript" src="src/ScatterPlot.js"></script>
 
 
 

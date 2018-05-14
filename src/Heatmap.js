@@ -15,13 +15,13 @@ function heatmapVis(){
 			bottom: 20,
 			left: 50
 		};
-	var gridSize = Math.floor((width-margins.left-margins.right)/22);
+	var gridSize = Math.floor((width-margins.left-margins.right)/19);
 	var legendWidth = gridSize*2;
 	var buckets = 9;
 	var colorLegend = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494"];
 	var strings = ["e", "b", "g", "d", "A", "E"];
-	var frets = new Array(22);
-	for (var f = 0; f<22; f++) frets[f] = f;
+	var frets = new Array(19);
+	for (var f = 0; f<19; f++) frets[f] = f;
 
 
 	var svg = d3.select("body").select("#heatmapElement").append("svg")
@@ -81,18 +81,18 @@ function heatmapVis(){
 	legend.enter().append("g")
 		.attr("class", "legend");
 
-	legend.append("rect")
-		.attr("x", function(d, i) { return margins.left+margins.right+legendWidth * i; })
-		.attr("y", 400)
-		.attr("width", legendWidth)
-		.attr("height", gridSize / 2)
-		.style("fill", function(d, i) { return colorLegend[i]; });
+	// legend.append("rect")
+	// 	.attr("x", function(d, i) { return margins.left+margins.right+legendWidth * i; })
+	// 	.attr("y", 400)
+	// 	.attr("width", legendWidth)
+	// 	.attr("height", gridSize / 2)
+	// 	.style("fill", function(d, i) { return colorLegend[i]; });
 
-	legend.append("text")
-		.attr("class", "mono")
-		.text(function(d) { return "≥ " + Math.round(d); })
-		.attr("x", function(d, i) { return legendWidth * i+margins.left+50; })
-		.attr("y", 400 + gridSize);
+	// legend.append("text")
+	// 	.attr("class", "mono")
+	// 	.text(function(d) { return "≥ " + Math.round(d); })
+	// 	.attr("x", function(d, i) { return legendWidth * i+margins.left+50; })
+	// 	.attr("y", 1200 + gridSize);
 
 	legend.exit().remove();
 
@@ -101,7 +101,7 @@ function heatmapVis(){
 		.attr("y", 30)
 		.attr("font-weight", "bold")
 		.attr("font-size", "18")
-		.text("Note Heatmap");
+		.text("Heatmap");
 
 	svg.append("line")
 		.attr("x1", 10)
